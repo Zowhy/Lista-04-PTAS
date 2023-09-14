@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <title>Projeto Express e EJS</title>
-  <link rel="stylesheet" type="text/css" href="/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Loja Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .product {
+            margin: 20px;
+        }
+    </style>
 </head>
 <body>
-  <h1><%= message %></h1>
+    <h1>Lolja</h1>
+    
+    <div class="product">
+        <a href="#" onclick="showProductInfo('Camiseta Cinza', 'R$ 50.00'); return false;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvJY9RwRaFhLJgZGNbyxrbWDOxzhAoWZSmKNCJ9ZK4EBD78ohPSw9M5inHV4OJFi7Nb7w&usqp=CAU.jpg" alt="Produto 1">
+            <h2>Produto 1</h2>
+        </a>
+    </div>
+
+    <div class="product">
+        <a href="#" onclick="showProductInfo('Camiseta Branca', 'R$ 35.00'); return false;">
+            <img src="https://inhotimloja.com.br/wp-content/uploads/2018/11/Inhotim_2018_08_231-300x300.jpg" alt="Produto 2">
+            <h2>Produto 2</h2>
+        </a>
+    </div>
+
+    <div id="productInfo" style="display: none;">
+        <h2>Detalhes do Produto</h2>
+        <p><strong>Nome do Produto:</strong> <span id="productName"></span></p>
+        <p><strong>Preço:</strong> <span id="productPrice"></span></p>
+    </div>
+
+    <script>
+        function showProductInfo(productName, productPrice) {
+            document.getElementById("productName").textContent = productName;
+            document.getElementById("productPrice").textContent = productPrice;
+            document.getElementById("productInfo").style.display = "block";
+        }
+    </script>
 </body>
 </html>
